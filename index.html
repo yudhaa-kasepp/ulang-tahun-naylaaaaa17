@@ -36,7 +36,11 @@ section{min-height:100dvh;position:relative}
 .music-btn{position:fixed;top:20px;right:20px;width:50px;height:50px;border-radius:50%;border:none;background:white;box-shadow:0 6px 20px rgba(0,0,0,.15);font-size:22px;cursor:pointer;z-index:100;display:flex;align-items:center;justify-content:center;transition:transform .2s}
 .music-btn:active{transform:scale(.9)}
 
-@media (max-width:480px){.photo-frame{width:160px;height:160px}.title{font-size:28px}.card{padding:25px 20px}}
+@media (max-width:480px){
+.photo-frame{width:160px;height:160px}
+.title{font-size:28px}
+.card{padding:25px 20px}
+}
 
 /* --- HUJAN HATI --- */
 .heart{position:fixed;top:-10%;z-index:99;color:#e91e63;font-size:24px;animation:fall linear forwards;opacity:0.8}
@@ -54,6 +58,14 @@ section{min-height:100dvh;position:relative}
 
 /* --- TEKS KAKI (右下) --- */
 .footer-text{position:fixed;bottom:15px;right:15px;font-size:12px;color:#b76e79;opacity:.6;z-index:50;font-family:'Poppins',sans-serif}
+
+/* === TAMBAHAN POLAROID & VIDEO (TIDAK MENGUBAH YANG LAIN) === */
+.polaroid-wrap{display:flex;justify-content:center;gap:18px}
+.polaroid{background:#fff;width:110px;padding:8px 8px 18px;box-shadow:0 10px 25px rgba(0,0,0,.25);text-align:center}
+.polaroid img{width:100%;height:120px;object-fit:cover}
+.polaroid small{display:block;margin-top:6px;font-size:12px;color:#6d3c45}
+.rotate-left{transform:rotate(-7deg)}
+.rotate-right{transform:rotate(7deg)}
 </style>
 </head>
 
@@ -61,132 +73,147 @@ section{min-height:100dvh;position:relative}
 
 <!-- HUJAN HATI 💗 -->
 <div class="hearts">
-    <div class="heart">💗</div>
-    <div class="heart">💖</div>
-    <div class="heart">💕</div>
-    <div class="heart">❤️</div>
-    <div class="heart">💗</div>
-    <div class="heart">💖</div>
-    <div class="heart">💕</div>
-    <div class="heart">❤️</div>
-    <div class="heart">💗</div>
-    <div class="heart">🎂</div>
-    <div class="heart">🎂</div>
+<div class="heart">💗</div><div class="heart">💖</div><div class="heart">💕</div>
+<div class="heart">❤️</div><div class="heart">💗</div><div class="heart">💖</div>
+<div class="heart">💕</div><div class="heart">❤️</div><div class="heart">💗</div>
+<div class="heart">🎂</div><div class="heart">🎂</div>
 </div>
 
-<!-- TEKS KAKI (右下) -->
 <div class="footer-text">dibuat@2026aayudhaaa</div>
 
-<!-- BACKGROUND -  -->
-<img src="https://image2url.com/r2/default/images/1771541100125-aa52af5d-a820-468a-98b6-c35cb733a869.jpeg" class="bg-img" alt="Background">
+<img src="https://image2url.com/r2/default/images/1771541100125-aa52af5d-a820-468a-98b6-c35cb733a869.jpeg" class="bg-img">
 
 <button class="music-btn" id="musicBtn" onclick="toggleMusic()">🔇</button>
 
 <audio id="music" loop>
-    <source src="https://image2url.com/r2/default/audio/1771511958438-a9c4ad3a-e94d-463e-8058-5d2357e2ae99.mp3" type="audio/mpeg">
+<source src="https://image2url.com/r2/default/audio/1771511958438-a9c4ad3a-e94d-463e-8058-5d2357e2ae99.mp3">
 </audio>
 
 <!-- SLIDE 1 -->
 <section>
-<div class="overlay">
-<div class="card">
-    <div class="title">Happy Birthday 🎂</div>
-    <div class="subtitle">Naylaaa
-        26/02/2026
-    </div>
-    <button class="btn" onclick="openInvitation()">buka pesan 💌</button>
-</div>
-</div>
+<div class="overlay"><div class="card">
+<div class="title">Happy Birthday 🎂</div>
+<div class="subtitle">Naylaaa<br>26/02/2026</div>
+<button class="btn" onclick="openInvitation()">buka pesan 💌</button>
+</div></div>
 </section>
 
 <!-- SLIDE 2 -->
 <section id="s2">
-<div class="overlay">
-<div class="card">
-    <div class="photo-frame">
-        <!-- FOTO PROFIL - -->
-        <img src="https://image2url.com/r2/default/images/1771735065619-8a16c604-a070-4020-8926-a362a9e716ee.jpg" alt="Naylaa">
-    </div>
-    <div class="message">
-        Selamat ulang tahun Naylaa  ✨  <br>
-        Semoga hari ini penuh senyum, tawa, dan hal baik yang kamu harapkan..
-    </div>
-    <button class="btn" onclick="document.getElementById('s3').scrollIntoView({behavior:'smooth'})">Lanjut 💗</button>
+<div class="overlay"><div class="card">
+<div class="photo-frame">
+<img src="https://image2url.com/r2/default/images/1771735065619-8a16c604-a070-4020-8926-a362a9e716ee.jpg">
 </div>
+<div class="message">
+Selamat ulang tahun Naylaa ✨<br>
+Semoga hari ini penuh senyum, tawa, dan hal baik yang kamu harapkan..
 </div>
+<button class="btn" onclick="document.getElementById('s3').scrollIntoView({behavior:'smooth'})">Lanjut 💗</button>
+</div></div>
 </section>
 
 <!-- SLIDE 3 -->
 <section id="s3">
-<div class="overlay">
-<div class="card">
-    <div class="message">
-        Semoga kamu selalu diberi kesehatan, dikelilingi orang baik, dan semua mimpimu perlahan jadi nyata 🌷
+<div class="overlay"><div class="card">
+<div class="message">
+Semoga kamu selalu diberi kesehatan, dikelilingi orang baik, dan semua mimpimu perlahan jadi nyata 🌷
+</div>
+<button class="btn" onclick="document.getElementById('sPolaroid').scrollIntoView({behavior:'smooth'})">Lanjut ✨</button>
+</div></div>
+</section>
+
+<!-- SLIDE POLAROID (TAMBAHAN) -->
+<section id="sPolaroid">
+<div class="overlay"><div class="card">
+<div class="message">Sedikit kenangan 📸</div>
+<div class="polaroid-wrap">
+<div class="polaroid rotate-left"><img src="https://raw.githubusercontent.com/yudhaa-kasepp/Asset-ultah/main/IMG-20260110-WA0045.jpg"><small>senyum</small></div>
+<div class="polaroid"><img src="https://raw.githubusercontent.com/yudhaa-kasepp/Asset-ultah/main/IMG-20260110-WA0017.jpg"><small>Pas Kamu Sibuk Pkl</small></div>
+<div class="polaroid rotate-right"><img src="https://raw.githubusercontent.com/yudhaa-kasepp/Asset-ultah/main/IMG_20260224_101500.jpg"><small>kenangan</small></div>
+</div>
+<button class="btn" style="margin-top:20px" onclick="document.getElementById('sVideo').scrollIntoView({behavior:'smooth'})">Lanjut 💌</button>
+</div></div>
+</section>
+
+<!-- SLIDE VIDEO LOOP -->
+<section id="sVideo">
+  <div class="overlay">
+    <div class="card">
+
+      <div class="message" style="margin-bottom:15px">
+        Sedikit momen
+      </div>
+
+      <video muted loop autoplay playsinline
+        style="width:100%;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,.2)">
+        <source src="https://raw.githubusercontent.com/yudhaa-kasepp/Asset-ultah/main/VID-20260224-WA0001.mp4" type="video/mp4">
+      </video>
+
+      <button class="btn" style="margin-top:20px"
+        onclick="document.getElementById('s4').scrollIntoView({behavior:'smooth'})">
+        Lanjut 💖
+      </button>
+
     </div>
-    <button class="btn" onclick="document.getElementById('s4').scrollIntoView({behavior:'smooth'})">Lanjut ✨</button>
-</div>
-</div>
+  </div>
 </section>
 
 <!-- SLIDE 4 -->
+<!-- SLIDE 4 -->
 <section id="s4">
-<div class="overlay">
-<div class="card">
-    <div class="title">Terima Kasih</div>
-    <div class="message" style="margin-top:15px">
-       Kalau sudah baca semuanya <br> jangan lupa ya 💌
+  <div class="overlay">
+    <div class="card">
+
+      <div class="title">Terima Kasih</div>
+      <div class="message" style="margin-top:15px">
+         Kalau sudah baca semuanya <br> jangan lupa balas ke aku yaa aayudhaa💌
+      </div>
+
+      <!-- TOMBOL WA -->
+      <a href="https://wa.me/6285711741146?text=%20pesan bebas dari naylaa%20%20🤍" target="_blank" style="text-decoration:none">
+          <button class="btn">Balas ke whatsaap aayudhaa 💬</button>
+      </a>
+
+      <!-- TOMBOL INSTAGRAM -->
+      <a href="https://www.instagram.com/yudhhaa_20?igsh=NDkyNHkzb3VpdGdu" target="_blank" style="text-decoration:none; margin-left:10px;">
+          <button class="btn">atau Balas ke Instagram aayudhaa 📸</button>
+      </a>
+
     </div>
-    <!-- WHATSAPP -  -->
-    <a href="https://wa.me/6285711741146?text=%20pesan bebas dari naylaa%20%20🤍" target="_blank" style="text-decoration:none">
-        <button class="btn">Balas ke aayudhaaa 💬</button>
-    </a>
-</div>
-</div>
+  </div>
 </section>
 
 <script>
-const music = document.getElementById('music');
-const musicBtn = document.getElementById('musicBtn');
-let play = false;
+const music=document.getElementById('music');
+const musicBtn=document.getElementById('musicBtn');
+let play=false;
 
 function openInvitation(){
-    music.play().then(()=>{
-        play = true;
-        musicBtn.innerHTML = "🔊";
-    }).catch(e=>{});
-    
-    document.getElementById('s2').scrollIntoView({behavior:'smooth'});
+music.play().then(()=>{play=true;musicBtn.innerHTML="🔊";}).catch(e=>{});
+document.getElementById('s2').scrollIntoView({behavior:'smooth'});
 }
 
 function toggleMusic(){
-    if(!play){
-        music.play().then(()=>{play=true;musicBtn.innerHTML="🔊";}).catch(e=>{});
-    }else{
-        if(music.paused){
-            music.play();
-            musicBtn.innerHTML = "🔊";
-        }else{
-            music.pause();
-            musicBtn.innerHTML = "🔇";
-        }
-    }
+if(!play){
+music.play().then(()=>{play=true;musicBtn.innerHTML="🔊";}).catch(e=>{});
+}else{
+if(music.paused){music.play();musicBtn.innerHTML="🔊";}
+else{music.pause();musicBtn.innerHTML="🔇";}
 }
-
-// Auto ulang hujan hati
-function repeatHearts(){
-    const hearts = document.querySelectorAll('.heart');
-    hearts.forEach(heart => {
-        heart.style.animation = 'none';
-        heart.offsetHeight;
-        heart.style.animation = null;
-    });
 }
-setInterval(repeatHearts, 10000);
+setInterval(() => {
+  document.querySelectorAll('.heart').forEach(heart => {
+    heart.style.animation = 'none';
+    heart.offsetHeight;
+    heart.style.animation = null;
+  });
+}, 10000);
+// ===== SAMPAI SINI =====
 </script>
 
 </body>
-
 </html>
+
 
 
 
