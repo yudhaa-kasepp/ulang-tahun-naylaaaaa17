@@ -18,28 +18,46 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            /* Background gelap aesthetic */
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            /* Background foto dengan blur effect */
+            background: url('https://image2url.com/r2/default/images/1771541100125-aa52af5d-a820-468a-98b6-c35cb733a869.jpeg') no-repeat center center fixed;
+            background-size: cover;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             color: #ffffff;
             overflow: hidden;
+            position: relative;
+        }
+
+        /* Overlay gelap untuk background */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 0;
         }
 
         /* Kartu Utama */
         .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             padding: 3rem 2rem;
             border-radius: 20px;
             text-align: center;
             max-width: 500px;
             width: 90%;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
             
             /* Animasi Fade In */
             opacity: 0;
