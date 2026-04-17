@@ -84,6 +84,7 @@ body::before{
     padding:3rem;
     border-radius:20px;
     text-align:center;
+    max-width: 90%;
 }
 
 .btn{
@@ -92,8 +93,15 @@ body::before{
     border:none;
     border-radius:10px;
     background:#00eaff;
-    cursor:pointer;
     box-shadow:0 0 10px rgba(0,234,255,0.5);
+}
+
+/* KELAS TAMBAHAN UNTUK TOMBOL RAHASIA */
+.hidden-btn {
+    opacity: 0; /* Membuat tombol tembus pandang 100% */
+    cursor: default; /* Kursor tetap panah biasa, tidak berubah jadi tangan */
+    user-select: none;
+    height: 40px; /* Menjaga area klik tetap ada */
 }
 
 /* POPUP */
@@ -109,6 +117,7 @@ body::before{
     opacity:0;
     pointer-events:none;
     transition:0.3s;
+    z-index: 20;
 }
 
 #popup.active{opacity:1;pointer-events:auto;}
@@ -198,7 +207,6 @@ body::before{
 </head>
 <body>
 
-<!-- INTRO -->
 <div id="intro">
     <div class="title">
         <span class="yudha">Yudha</span>
@@ -206,18 +214,18 @@ body::before{
     </div>
 </div>
 
-<!-- MAIN -->
 <div id="main">
     <div class="card">
         <h2>Website Ditutup</h2>
-        <p>Kenangan masih tersimpan dan akan selalu ada.</p>
-        <button class="btn" onclick="openPopup()">Buka Kembali</button>
-        <br><br>
+        <br>
+        <p>Website ini akan ditutup pada tanggal 20 Mei 2026,<br>makasih ya udah nemenin aku, walaupun cuma sebentar.</p>
+        
+        <button class="btn hidden-btn" onclick="openPopup()">Buka Kembali</button>
+        <br>
         <span style="opacity:0.5;font-size:12px;">by Yudha</span>
     </div>
 </div>
 
-<!-- POPUP PIN -->
 <div id="popup">
     <div class="popup-box">
 
